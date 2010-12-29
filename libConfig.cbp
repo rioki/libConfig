@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libConfig" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="libConfig (Debug)">
+				<Option output="bin\Debug\libConfig" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USRDLL" />
+					<Add option="-DLIBCONFIG_EXPORTS" />
+					<Add option="-W" />
+					<Add option="-O0" />
+					<Add directory="Include\libConfig" />
+					<Add directory="Source" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Include\libConfig" />
+					<Add directory="Source" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="libConfig (Release)">
+				<Option output="bin\Release\libConfig" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USRDLL" />
+					<Add option="-DLIBCONFIG_EXPORTS" />
+					<Add option="-W" />
+					<Add option="-O2" />
+					<Add directory="Include\libConfig" />
+					<Add directory="Source" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Include\libConfig" />
+					<Add directory="Source" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Unit Tests (Debug)">
+				<Option output="bin\Debug\libConfigTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-O0" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USRDLL" />
+					<Add option="-DLIBCONFIG_EXPORTS" />
+					<Add directory="Include" />
+					<Add directory="$(#unittestpp.include)" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Include\libConfig" />
+					<Add directory="Source" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="bin\Debug\libConfig.dll.a" />
+					<Add library="UnitTest++" />
+					<Add directory="$(#unittestpp.lib)" />
+				</Linker>
+			</Target>
+			<Target title="Unit Tests (Release)">
+				<Option output="bin\Release\libConfigTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-W" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USRDLL" />
+					<Add option="-DLIBCONFIG_EXPORTS" />
+					<Add directory="Include" />
+					<Add directory="$(#unittestpp.include)" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Include\libConfig" />
+					<Add directory="Source" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="bin\Release\libConfig.dll.a" />
+					<Add library="UnitTest++" />
+					<Add directory="$(#unittestpp.lib)" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="Debug" targets="libConfig (Debug);Unit Tests (Debug);" />
+			<Add alias="Release" targets="libConfig (Release);Unit Tests (Release);" />
+		</VirtualTargets>
+		<Compiler>
+			<Add directory="Include\libConfig" />
+		</Compiler>
+		<Unit filename="Include\libConfig\Config.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Include\libConfig\Value.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Include\libConfig\ValueType.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Include\libConfig\defines.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\Config.cpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ConfigLexer.cpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ConfigLexer.fpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ConfigLexer.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ConfigParser.cpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ConfigParser.hpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ConfigParser.ypp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\FlexLexer.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\Value.cpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\ValueType.cpp">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\location.hh">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\position.hh">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\stack.hh">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Source\utils.h">
+			<Option target="libConfig (Debug)" />
+			<Option target="libConfig (Release)" />
+		</Unit>
+		<Unit filename="Test\ConfigTest.cpp">
+			<Option target="Unit Tests (Debug)" />
+			<Option target="Unit Tests (Release)" />
+		</Unit>
+		<Unit filename="Test\ValueTest.cpp">
+			<Option target="Unit Tests (Debug)" />
+			<Option target="Unit Tests (Release)" />
+		</Unit>
+		<Unit filename="Test\main.cpp">
+			<Option target="Unit Tests (Debug)" />
+			<Option target="Unit Tests (Release)" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
